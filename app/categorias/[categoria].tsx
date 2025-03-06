@@ -33,7 +33,7 @@ const ProductosPorCategoria = () => {
     };
 
     obtenerProductos();
-  }, [categoria]); // 📌 Se ejecuta cuando cambia la categoría
+  }, [categoria]); // Se ejecuta cuando cambia la categoría
 
   return (
     <View style={styles.container}>
