@@ -6,7 +6,7 @@ import Foother from '../../components/Foother';
 import Header from '../../components/Header';
 
 const ProductoDetalle = () => {
-  const { id } = useLocalSearchParams(); // 📌 Obtiene el ID del producto desde la URL
+  const { id } = useLocalSearchParams(); 
   interface Producto {
     id: number;
     title: string;

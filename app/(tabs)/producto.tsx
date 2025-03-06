@@ -1,7 +1,7 @@
 import { ActivityIndicator, FlatList, Image, StyleSheet, Text, View } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'expo-router';
-import Boton from '../../components/Boton'; // Asegúrate de que esta ruta sea correcta
+import Boton from '../../components/Boton';
 
 const Productos = () => {
   const router = useRouter();
@@ -45,16 +45,12 @@ const Productos = () => {
   // Renderizar cada producto
   const ProductoItem = (props: Producto) => (
     <View style={styles.card}>
-      <Text>Producto: {props.title}</Text>
-      <Text>Descripción: {props.description}</Text>
+      <Text style={styles.titulo}>{props.title}</Text>
       <Image source={{ uri: props.image }} style={styles.imagen} />
       <Boton
         titulo="Ver Detalles..."
         onPress={() => {
-          router.push({
-            pathname: '/productos/[id]',
-            params: { producto: JSON.stringify(props) },
-          });
+          router.push(`/producto/${props.id}`); // 📌 Redirige a la pantalla de detalles del producto
         }}
       />
     </View>
@@ -64,19 +60,18 @@ const Productos = () => {
     <View style={styles.container}>
       {cargando ? (
         <View style={styles.loadscreen}>
+          <Text style={styles.titulo}>Cargando productos...</Text>
           <ActivityIndicator size="large" color="blue" />
         </View>
       ) : (
-        <View style={styles.loadscreen}>
-          <FlatList
-            data={productos}
-            renderItem={({ item }) => (
-              <ProductoItem title={item.title} description={item.description} image={item.image} id={item.id} />
-            )}
-            keyExtractor={(item) => item.id.toString()}
-            style={styles.flatlist}
-          />
-        </View>
+        <FlatList
+          data={productos}
+          renderItem={({ item }) => (
+            <ProductoItem title={item.title} description={item.description} image={item.image} id={item.id} />
+          )}
+          keyExtractor={(item) => item.id.toString()}
+          style={styles.flatlist}
+        />
       )}
     </View>
   );
@@ -85,12 +80,7 @@ const Productos = () => {
 export default Productos;
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#f5f5f5',
-  },
+  container: { flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#f5f5f5' },
   card: {
     backgroundColor: 'white',
     padding: 10,
@@ -101,26 +91,10 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.8,
     shadowRadius: 2,
     elevation: 5,
-  },
-  flatlist: {
-    width: '100%',
-  },
-  loadscreen: {
-    flex: 1,
-    justifyContent: 'center',
     alignItems: 'center',
   },
-  titulo: {
-    fontSize: 24,
-    fontWeight: 'bold',
-  },
-  link: {
-    fontSize: 16,
-    color: 'blue',
-    margin: 10,
-  },
-  imagen: {
-    height: 100,
-    width: 100,
-  },
+  flatlist: { width: '100%' },
+  loadscreen: { flex: 1, justifyContent: 'center', alignItems: 'center' },
+  titulo: { fontSize: 18, fontWeight: 'bold', textAlign: 'center' },
+  imagen: { height: 100, width: 100, marginVertical: 10 },
 });
