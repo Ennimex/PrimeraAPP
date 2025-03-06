@@ -4,7 +4,7 @@ import { useLocalSearchParams, useRouter } from 'expo-router';
 
 const ProductosPorCategoria = () => {
   const router = useRouter();
-  const { categoria } = useLocalSearchParams(); // 📌 Obtiene la categoría desde la URL
+  const { categoria } = useLocalSearchParams(); //Obtiene la categoría desde la URL
   interface Producto {
     id: number;
     title: string;
