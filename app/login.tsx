@@ -27,11 +27,43 @@ export default function Login() {
 }
 
 const styles = StyleSheet.create({
-  contenedor: { flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#f5f5f5' },
-  img: { marginBottom: 30, width: 150, height: 150 },
-  formContainer: { width: '80%' },
-  label: { fontSize: 16, marginBottom: 8, color: '#333' },
-  input: { height: 40, borderColor: '#ccc', borderWidth: 1, borderRadius: 5, paddingHorizontal: 10, marginBottom: 20, backgroundColor: '#fff' },
-  btn: { backgroundColor: 'blue', paddingVertical: 12, paddingHorizontal: 30, borderRadius: 5, alignItems: 'center' },
-  btnText: { color: 'white', fontSize: 16 },
+  contenedor: { 
+    flex: 1, 
+    justifyContent: 'center',
+    alignItems: 'center', 
+    backgroundColor: '#f5f5f5'
+    },
+  img: { 
+    marginBottom: 30, 
+    width: 150, 
+    height: 150 
+  },
+  formContainer: { width: '80%' 
+
+  },
+  label: { 
+    fontSize: 16,
+    marginBottom: 8, 
+    color: '#333' 
+  },
+  input: { 
+    height: 40, 
+    borderColor: '#ccc', 
+    borderWidth: 1, 
+    borderRadius: 5, 
+    paddingHorizontal: 10, 
+    marginBottom: 20, 
+    backgroundColor: '#fff' 
+  },
+  btn: { 
+    backgroundColor: 'blue', 
+    paddingVertical: 12, 
+    paddingHorizontal: 30, 
+    borderRadius: 5, 
+    alignItems: 'center' 
+  },
+  btnText: { 
+    color: 'white', 
+    fontSize: 16
+    },
 });
