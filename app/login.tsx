@@ -6,6 +6,7 @@ export default function Login() {
   const router = useRouter();
 
   const handleLogin = () => {
+    
     router.replace('/(tabs)/categorias'); // O '/(tabs)/productos' si quieres otra pestaña como inicio
 // Redirige a las pestañas después del login
   };

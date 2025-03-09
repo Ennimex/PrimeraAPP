@@ -80,7 +80,11 @@ const Productos = () => {
 export default Productos;
 
 const styles = StyleSheet.create({
-  container: { flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#f5f5f5' },
+  container: { flex: 1, 
+    justifyContent: 'center', 
+    alignItems: 'center', 
+    backgroundColor: '#f5f5f5' 
+  },
   card: {
     backgroundColor: 'white',
     padding: 10,
@@ -94,7 +98,16 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   flatlist: { width: '100%' },
-  loadscreen: { flex: 1, justifyContent: 'center', alignItems: 'center' },
-  titulo: { fontSize: 18, fontWeight: 'bold', textAlign: 'center' },
-  imagen: { height: 100, width: 100, marginVertical: 10 },
+  loadscreen: { flex: 1, 
+    justifyContent: 'center', 
+    alignItems: 'center' 
+  },
+  titulo: { fontSize: 18, 
+    fontWeight: 'bold', 
+    textAlign: 'center' 
+  },
+  imagen: { height: 100, 
+    width: 100, 
+    marginVertical: 10 
+  },
 });

@@ -38,7 +38,7 @@ const Categorias = () => {
           renderItem={({ item }) => (
             <TouchableOpacity
               style={styles.card}
-              onPress={() => router.push(`/categorias/${item}`)} // 📌 Redirige a productos de la categoría
+              onPress={() => router.push(`/categorias/${item}`)} //Redirige a productos de la categoría
             >
               <Text style={styles.texto}>{item}</Text>
             </TouchableOpacity>
@@ -54,9 +54,20 @@ const Categorias = () => {
 export default Categorias;
 
 const styles = StyleSheet.create({
-  container: { flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#f5f5f5' },
-  loadscreen: { flex: 1, justifyContent: 'center', alignItems: 'center' },
-  titulo: { fontSize: 24, fontWeight: 'bold', marginBottom: 10 },
+  container: { 
+    flex: 1, 
+    justifyContent: 'center', 
+    alignItems: 'center', 
+    backgroundColor: '#f5f5f5' 
+  },
+  loadscreen: { flex: 1, 
+    justifyContent: 'center', 
+    alignItems: 'center' 
+  },
+  titulo: { fontSize: 24, 
+    fontWeight: 'bold', 
+    marginBottom: 10 
+  },
   flatlist: { width: '100%' },
   card: {
     backgroundColor: 'white',
@@ -66,5 +77,8 @@ const styles = StyleSheet.create({
     elevation: 5,
     alignItems: 'center',
   },
-  texto: { fontSize: 18, fontWeight: 'bold', color: '#333' },
+  texto: { fontSize: 18, 
+    fontWeight: 'bold', 
+    color: '#333' 
+  },
 });
